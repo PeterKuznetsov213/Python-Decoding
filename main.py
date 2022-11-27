@@ -5,24 +5,29 @@ def chars_to_be_multiplyed(decode_str, starting_point: int, length_of_str: int, 
     result_of_recursion = ""
     i = starting_point
     while i <= length_of_str:
-        print(f'i - {i}')
+        # print(f'i - {i}')
+        
         if decode_str[i].isdigit():
             char_multiplyer = int(decode_str[i])
             starting_point = i + 2
             result_of_recursion = str(
                 chars_to_be_multiplyed(decode_str, starting_point, length_of_str, char_multiplyer))
-            i += 1
+            # print(result_of_recursion)
+            
         elif decode_str[i] == "]":
-            result = (chars + result_of_recursion) * char_multiplyer
+            print(result_of_recursion)
+            result = (chars + result_of_recursion)
+            result = result * char_multiplyer
             return result
         else:
             if decode_str[i] != "[":
                 chars = chars + decode_str[i]
+                
 
         i += 1
 
 
-decode_str = "3[а]cf2[df]"
+decode_str = "3[b2[ca]]"
 
 
 def decoding(decode_str: str):
