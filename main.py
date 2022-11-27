@@ -22,7 +22,7 @@ def chars_to_be_multiplyed(decode_str, starting_point: int, length_of_str: int, 
         i += 1
 
 
-decode_str = "1[b]"
+decode_str = "3[а]cf2[df]"
 
 
 def decoding(decode_str: str):
@@ -30,7 +30,7 @@ def decoding(decode_str: str):
     for i in range(len(decode_str)):
         if decode_str[i].isdigit():
             print(f"mylty - {decode_str[i]}")
-            char_multiplyer = int(decode_str[i])
+            char_multiplyer = int(decode_str[i])-1
             starting_point = i + 2
             length_of_str = len(decode_str)
             result = result + str(chars_to_be_multiplyed(decode_str, starting_point, length_of_str, char_multiplyer))
